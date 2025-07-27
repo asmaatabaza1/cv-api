@@ -1,2 +1,3 @@
-gradio
-openai
+flask
+gradio_client
+gunicorn
