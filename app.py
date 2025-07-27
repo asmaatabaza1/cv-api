@@ -5,6 +5,12 @@ from flask import Flask, request, jsonify
 app = Flask(__name__)
 client = Client("asmaaabd0/cv-suggester")
 
+@app.route("/", methods=["GET", "POST"])
+def index():
+    if request.method == "POST":
+        return jsonify({"message": "This endpoint is only for health check. Use /generate_cv for predictions."}), 405
+    return "✅ CV Generator API is running!"
+
 @app.route("/generate_cv", methods=["POST"])
 def generate_cv():
     data = request.json or {}
