@@ -4,7 +4,7 @@ from gradio_client import Client
 from flask import Flask, request, jsonify
 
 app = Flask(__name__)
-client = Client("asmaaabd0/cv-suggester")
+client = Client("asmaaabd0/generate_cv_and_skills")
 
 @app.route("/", methods=["GET", "POST"])
 def index():
